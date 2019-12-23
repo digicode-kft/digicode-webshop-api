@@ -4,6 +4,10 @@ require 'sdk/Price.php';
 require 'sdk/Product.php';
 require 'sdk/User.php';
 
+
+/**
+ * Price module
+ */
 $price = new Price(array(
 	"api_key" => "REPLACE_WITH_YOUR_API_KEY"
 ));
@@ -14,7 +18,9 @@ print_r($price_get);
 $price_list = $price->list();
 print_r($price_list);
 
-
+/**
+ * Product module
+ */
 $product = new Product(array(
 	"api_key" => "REPLACE_WITH_YOUR_API_KEY"
 ));
@@ -31,8 +37,9 @@ $product_list = $product->list(array(
 ));
 print_r($product_list);
 
-
-
+/**
+ * User module
+ */
 $user = new User(array(
 	"api_key" => "REPLACE_WITH_YOUR_API_KEY"
 ));
