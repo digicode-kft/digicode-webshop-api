@@ -1,6 +1,6 @@
 <?php
 
-require "Base_api_model.php";
+require_once "Base_api_model.php";
 
 class User extends Base_api_model {
 
@@ -9,14 +9,14 @@ class User extends Base_api_model {
     }
 
 	public function get($data = array()) {
-		return $this->call("GET", "https://www.digicode.hu/api/user/get", $data);
+		return $this->call("GET", $this->api_host."api/user/get", $data);
 	}
 	
 	public function company($data = array()) {
-		return $this->call("GET", "https://www.digicode.hu/api/user/company", $data);
+		return $this->call("GET", $this->api_host."api/user/company", $data);
 	}
 
 	public function company_user_list($data = array()) {
-		return $this->call("GET", "https://www.digicode.hu/api/user/company_user_list", $data);
+		return $this->call("GET", $this->api_host."api/user/company_user_list", $data);
 	}
 }

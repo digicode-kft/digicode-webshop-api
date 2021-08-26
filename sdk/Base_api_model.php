@@ -2,9 +2,14 @@
 
 class Base_api_model {
 	private $api_key = "";
+	protected $api_host = "https://www.digicode.hu/";
 	
 	public function set_api_key($api_key = NULL){
 		$this->api_key = $api_key;
+	}
+	
+	public function set_api_host($api_host = NULL){
+		$this->api_host = $api_host;
 	}
 	
 	public function call($method, $url, $data){

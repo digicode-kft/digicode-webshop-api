@@ -1,8 +1,8 @@
 <?php
 
-require 'sdk/Price.php';
-require 'sdk/Product.php';
-require 'sdk/User.php';
+require_once 'sdk/Price.php';
+require_once 'sdk/Product.php';
+require_once 'sdk/User.php';
 
 
 /**
@@ -17,6 +17,7 @@ print_r($price_get);
 
 $price_list = $price->list();
 print_r($price_list);
+
 
 /**
  * Product module
@@ -37,6 +38,13 @@ $product_list = $product->list(array(
 ));
 print_r($product_list);
 
+$product_list_image = $product->list_image(array(
+	'list_condition' => array(
+		'partnumber' => 'LS2208-SR20007R-UR',
+	),
+));
+print_r($product_list_image);
+
 /**
  * User module
  */
@@ -52,4 +60,3 @@ print_r($user_company);
 
 $user_company_user_list = $user->company_user_list();
 print_r($user_company_user_list);
-

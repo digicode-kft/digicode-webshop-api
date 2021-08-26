@@ -1,6 +1,6 @@
 <?php
 
-require "Base_api_model.php";
+require_once "Base_api_model.php";
 
 class Price extends Base_api_model {
 
@@ -9,10 +9,10 @@ class Price extends Base_api_model {
     }
 
 	public function get($data = array()) {
-		return $this->call("GET", "https://www.digicode.hu/api/price/get", $data);
+		return $this->call("GET", $this->api_host."api/price/get", $data);
 	}
 
 	public function list($data = array()) {
-		return $this->call("GET", "https://www.digicode.hu/api/price/list", $data);
+		return $this->call("GET", $this->api_host."api/price/list", $data);
 	}
 }
